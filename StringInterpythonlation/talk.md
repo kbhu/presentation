@@ -56,15 +56,6 @@ so it is not reasonable to choose one of them now to enable interpolation.
 # Implementation: Printf formatting via operator
 
 ```python
-Pros:
-```
-
-* Simple 
-* Similar to string interpolation methods used in other programming languages.
-
-# Implementation: Printf formatting via operator
-
-```python
 >>> params = {'user': 'nobody', 'id': 9, 'hostname': 
    'darkstar'}
 
@@ -113,12 +104,19 @@ $hostname').substitute(params)
 # New Syntax Proposal
 ```python
 >>> location = 'World'
->>> f'Hello, {location} !'      # new prefix: f''
-'Hello, World !'                # interpolated result
+>>> f'Hello, {location} !'  # new prefix: f''
+'Hello, World !'            # interpolated result
 ```
+# Expression Evaluation
 
+* Expressions are parsed with the equivalent of:
+*  ast.parse('(' + expression + ')', '<fstring>', 'eval') 
 
+# Expression Evaluation(cont.)
 
+* Expressions in an f-string are evaluated left-to-right 
+* This is detectable only if the expressions have side effects
+*
 
 # Safety
 
@@ -133,28 +131,20 @@ $hostname').substitute(params)
 
 # Backwards Compatibility
 
-```python
-# uses existing syntax and avoids historical features
-# format strings were designed to be backwards compatible
-```
+* uses existing syntax & avoids historical features
+* format strings designed to be backwards compatible
+
 
 # Internalization
 
 ```python
-# deemed too difficult to implement
+# deemed too difficult 
+# to implement
 ```
 * Use-cases differ
 * Compile vs. run-time tasks
 * Interpolation syntax requirement
 * Does not necessarily match intended audience
 * Security policy risks
-
-# Additional Rejected Ideas
-
-* Limiting syntax to str.format()
-* Additional / Custom String-Prefixes
-* Automated Escaping of Input-Variables
-* Environment Access and Command Substitution
-
 
 
