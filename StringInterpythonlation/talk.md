@@ -1,7 +1,7 @@
 # Python String Interpolation
 
-* Also known as variable interpolation
-* What is it?
+* Featuring: 
+* Kevin Prabhu, Ben King, Andrew Callahan, Kevin Flynn
 
 # String Interpolation: What is it?
 
@@ -124,9 +124,9 @@ $hostname').substitute(params)
 
 # Safety (ctd.)
 
+* Recursive interpolation not supported
 * Mistakes or malicious code can be obscured inside a string
 * Highly recommended to avoid constructs in format-strings
-* Recursive interpolation not supported
 
 # Backwards Compatibility
 
@@ -134,7 +134,7 @@ $hostname').substitute(params)
 * format strings designed to be backwards compatible
 
 
-# Internalization
+# Internationalization
 
 ```python
 # deemed too difficult 
