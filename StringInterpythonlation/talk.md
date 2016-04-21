@@ -1,7 +1,8 @@
 # Python String Interpolation
 
-* Featuring: 
-* Kevin Prabhu, Ben King, Andrew Callahan, Kevin Flynn
+* PEP 502
+* Also known as variable interpolation
+* What is it?
 
 # String Interpolation: What is it?
 
@@ -133,17 +134,15 @@ $hostname').substitute(params)
 * uses existing syntax & avoids historical features
 * format strings designed to be backwards compatible
 
+# Community Feedback
 
-# Internationalization
+* Criticism of wordiness of PEP itself
+* Problems with implementation of e-strings
+* Lack of ```globals()``` and ```locals()``` was a requested community feature
 
-```python
-# deemed too difficult 
-# to implement
-```
-* Use-cases differ
-* Compile vs. run-time tasks
-* Interpolation syntax requirement
-* Does not necessarily match intended audience
-* Security policy risks
+# References
 
-
+* https://docs.python.org/3/library/string.html#formatstrings
+* https://docs.python.org/3/library/ast.html#ast.parse
+* http://legacy.python.org/dev/peps/pep-0502/
+* http://www.gossamer-threads.com/lists/python/dev/1216389
