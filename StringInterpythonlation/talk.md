@@ -110,24 +110,23 @@ $hostname').substitute(params)
 # Expression Evaluation
 
 * Expressions are parsed with the equivalent of:
-*  ast.parse('(' + expression + ')', '<fstring>', 'eval') 
+* ast.parse('(' + expression + ')', '<fstring>', 'eval')
 
 # Expression Evaluation(cont.)
 
 * Expressions in an f-string are evaluated left-to-right 
 * This is detectable only if the expressions have side effects
-*
 
 # Safety
 
 * Only string literals can be considered for format-strings
 * Neither ``` locals()``` nor ``` globals()``` are used during transformation
-* Recursive interpolation not supported
 
-# Precautions
+# Safety (ctd.)
 
 * Mistakes or malicious code can be obscured inside a string
 * Highly recommended to avoid constructs in format-strings
+* Recursive interpolation not supported
 
 # Backwards Compatibility
 
